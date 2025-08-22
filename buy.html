@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(burger.jpg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    
+    }
+    .login-box {
+      background: #fff;
+      background-image: url(burger.jpg);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 500px;
+      text-align: center;
+      
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: white;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-box button {
+      width: 50%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background: #0056b3;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+    select{
+        text-align: center;
+        height: 30px;
+        font-size: medium;
+        font-weight: bolder;
+    }
+    option{
+        font-weight: bolder;
+        font-size: small;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required><br>
+     <select name="" id="" required>
+        <option value="">SELECT PLANS</option>
+        <option value="Basic Bite $0/month">Basic Bite $0/month</option>
+        <option value="QuickBite Plus $99/month">QuickBite Plus $99/month</option>
+        <option value="Pro Feast(Comming Soon) $199/month">Pro Feast(Comming Soon) $199/month</option>
+    </select><br><br>
+    <button type="submit">Login</button>
+    <p class="error" id="errorMsg">Please fill out all fields correctly!</p>
+   
+  </form>
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let errorMsg = document.getElementById("errorMsg");
+
+    if (email === "" || password === "") {
+      errorMsg.style.display = "block";
+    } else {
+      errorMsg.style.display = "none";
+      alert("✅ Login Successful!");
+      this.reset();
+    }
+  });
+</script>
+
+</body>
+</html>
